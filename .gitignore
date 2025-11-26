@@ -1,0 +1,16 @@
+# 系统和编辑器文件
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+.vscode/
+.idea/
+
+# Claude配置文件（保持私密）
+.claude/
+
+# 临时文件
+compress_images.py
+optimize_images.ps1
+*.png
