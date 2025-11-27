@@ -648,11 +648,22 @@
 
     // Share功能实现
     function handleShare(btn) {
-        const shareUrl = window.location.href;
+        // 从当前URL提取clickurl参数用于跳转
+        const currentUrl = window.location.href;
+        let clickUrl = '{clickurl}'; // 默认值
+
+        // 尝试从URL解析clickurl参数
+        try {
+            const urlParams = new URLSearchParams(currentUrl.split('?')[1] || '');
+            clickUrl = urlParams.get('clickurl') || '{clickurl}';
+        } catch (e) {
+            // 如果URL解析失败，使用默认值
+        }
+
         const shareText = "🎯 Check out MTN Daily Lucky Draw! Win ₦5000 daily prizes! 🎉";
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(() => {
+            navigator.clipboard.writeText(shareText + ' ' + currentUrl).then(() => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Link Copied!',
@@ -662,10 +673,10 @@
                     showConfirmButton: false
                 });
             }).catch(() => {
-                fallbackShare(shareText, shareUrl);
+                fallbackShare(shareText, currentUrl);
             });
         } else {
-            fallbackShare(shareText, shareUrl);
+            fallbackShare(shareText, currentUrl);
         }
     }
 
