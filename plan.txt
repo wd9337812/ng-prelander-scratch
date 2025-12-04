@@ -1,0 +1,75 @@
+Role: You are an expert Conversion Rate Optimization (CRO) specialist and Front-end Developer experienced in Affiliate Marketing for the Nigerian (NG) market.
+
+Task: I need you to modify the attached index.html file. This is a pre-lander for an MTN offer. Currently, the page promises "Free Rewards," but the actual offer landing page requires users to subscribe to a "Daily Plan" for N100 to play. I need to bridge this gap to reduce the bounce rate. The goal is to pre-frame the user so they expect the small N100 fee and view it as a high-value entry ticket, rather than being surprised by a charge.
+
+Please implement the following specific changes to the code:
+
+1. Header & Branding (Align with Offer Page):
+
+Change the page <title> and the <h1> in the header from "MTN Daily Lucky Draw" to "MTN Scratch & Play - Daily Jackpot".
+
+This aligns with the actual product name on the offer page.
+
+2. Alert Banner (Set Expectations):
+
+Update the .alert-banner text.
+
+From: "Limited Time: Win ₦5000 Daily!"
+
+To: "🔥 Live: Win Cash & Airtime with Daily Plan!"
+
+Design tweak: Change the banner background gradient to a darker red (linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)) to match the "Try your Luck" banner on the offer page.
+
+3. Body Copy (The "Small Investment" Angle):
+
+Update the .client section text:
+
+Change "You've been selected for MTN Scratch & Play!" to "You've been selected for the Daily Winners Club! Unlock your chance to turn ₦100 into ₦50,000 instantly!"
+
+Update the .info section headline:
+
+Change "Find Hidden ₦5000 Prize!" to "Match the Items to Win!" (This matches the game mechanics shown on the offer page).
+
+4. Social Proof (Nigeria Context & Objection Handling):
+
+Rewrite the 3 comments in the .comments section to sound like authentic Nigerian users (using slight Pidgin/local English) who are validating the N100 cost and SMS verification.
+
+Comment 1 (Chioma): "I was skeptical about the N100 daily plan at first, but I tried it and BOOM! Won ₦2000 airtime immediately. Legit! 🇳🇬"
+
+Comment 2 (Tunde): "Just subscribed. The code arrived fast via SMS. Hoping to hit the cash jackpot today! Abeg make una wish me luck o!"
+
+Comment 3 (Zainab): "My friend won yesterday so I joined via the daily plan. Best way to verify is to use your main MTN line."
+
+5. Javascript Popups (The Call to Action):
+
+Modify dialog3 function (The Winner Popup):
+
+Do not just say "You won". Instead, say "Match Found! Prize Reserved."
+
+Update the html content in the Swal.fire to explicitly instruct the user on the next steps.
+
+New HTML content for popup:
+
+HTML
+
+<div style="text-align: center;">
+    <h3 style="color: #000;">🎉 MATCH FOUND! 🎉</h3>
+    <p>You have matched the winning items!</p>
+    <div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;">
+        <strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br>
+        <span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span>
+    </div>
+    <p><strong>Final Step to Claim:</strong></p>
+    <ol style="text-align: left; margin: 0 auto; display: inline-block;">
+        <li>Click <strong>"CLAIM NOW"</strong> below.</li>
+        <li>Enter your MTN number on the next page.</li>
+        <li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li>
+    </ol>
+</div>
+Change button text to: "CLAIM NOW ➤"
+
+Modify dialog3Manual function:
+
+Update the HTML to reinforce the "Official MTN Partner Site" and "N100 Daily Plan activation" instructions.
+
+Output: Please provide the full, updated index.html file with all these changes implemented, ensuring the layout remains responsive and the game logic still works.

