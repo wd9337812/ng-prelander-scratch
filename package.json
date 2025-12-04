@@ -4,11 +4,18 @@
   "description": "MTN Scratch & Play - Daily Jackpot",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site ready for deployment'",
-    "dev": "echo 'Starting development server...' && npx serve ."
+    "build": "echo 'Build completed successfully'",
+    "start": "echo 'Starting development server...' && npx serve .",
+    "dev": "npx serve .",
+    "deploy": "vercel --prod"
   },
-  "keywords": ["mtn", "scratch", "play", "jackpot", "nigeria"],
+  "keywords": ["mtn", "scratch", "play", "jackpot", "nigeria", "vercel"],
   "author": "",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }
