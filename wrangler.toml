@@ -1,5 +1,4 @@
-name = "mtn-scratch-play"
 compatibility_date = "2024-01-01"
 
-[env.production]
-pages_build_output_dir = "."
+[assets]
+directory = "."

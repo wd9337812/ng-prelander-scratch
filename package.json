@@ -4,9 +4,8 @@
   "description": "MTN Scratch & Play - Daily Jackpot",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site - no build needed'",
-    "deploy": "wrangler pages deploy . --project-name=mtn-scratch-play --compatibility-date=2024-01-01",
-    "deploy:preview": "wrangler pages deploy . --project-name=mtn-scratch-play --compatibility-date=2024-01-01 --preview",
+    "build": "echo 'Static site ready'",
+    "deploy": "wrangler pages deploy . --compatibility-date=2024-01-01",
     "dev": "npx serve ."
   },
   "keywords": ["mtn", "scratch", "play", "jackpot", "nigeria"],
