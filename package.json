@@ -1,0 +1,17 @@
+{
+  "name": "mtn-scratch-play",
+  "version": "1.0.0",
+  "description": "MTN Scratch & Play - Daily Jackpot",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "wrangler pages deploy",
+    "dev": "npx serve ."
+  },
+  "keywords": ["mtn", "scratch", "play", "jackpot", "nigeria"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.52.1",
+    "serve": "^14.2.1"
+  }
+}

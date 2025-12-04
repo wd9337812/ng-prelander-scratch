@@ -1,6 +1,2 @@
 name = "mtn-scratch-play"
 compatibility_date = "2025-12-04"
-
-# Pages configuration - this is for documentation purposes
-# Cloudflare Pages will use this as a reference but not for deployment
-pages_build_output_dir = "."
