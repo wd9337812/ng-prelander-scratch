@@ -2,6 +2,18 @@ name = "mtn-scratch-play"
 compatibility_date = "2025-12-04"
 main = "functions/_middleware.js"
 
-[[pages_build_output]]
-directory = "_public"
+[build]
 command = ""
+cwd = "."
+watch_dir = "."
+
+[build.upload]
+format = "modules"
+dir = "."
+rules = [
+  { type = "ESModule", globs = ["**/*.js"] }
+]
+
+[[rules]]
+type = "ESModule"
+globs = ["**/*.js"]
