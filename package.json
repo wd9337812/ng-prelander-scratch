@@ -4,15 +4,11 @@
   "description": "MTN Scratch & Play - Daily Jackpot",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site ready'",
-    "deploy": "wrangler pages deploy . --compatibility-date=2024-01-01",
-    "dev": "npx serve ."
+    "build": "echo 'Static site ready for deployment'",
+    "dev": "echo 'Starting development server...' && npx serve ."
   },
   "keywords": ["mtn", "scratch", "play", "jackpot", "nigeria"],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "wrangler": "^4.52.1",
-    "serve": "^14.2.1"
-  }
+  "devDependencies": {}
 }
