@@ -1,5 +1,2 @@
-# Home page redirects to index.html
-/index.html / 200
-
-# Handle missing trailing slashes
-/* /$index.html 200
+# SPA routing - redirect all non-file requests to index.html
+/*    /index.html   200
