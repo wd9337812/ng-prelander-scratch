@@ -203,6 +203,20 @@
             font-size: 1.1em;
         }
 
+        .swal2-confirm-custom {
+            background: linear-gradient(135deg, #ffcc00 0%, #ffdb4d 100%) !important;
+            color: #000 !important;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border: 2px solid #000 !important;
+        }
+
+        .swal2-confirm-custom:hover {
+            background: linear-gradient(135deg, #ff6b35 0%, #ffcc00 100%) !important;
+        }
+
         /* 现代化评论区设计 */
         .comments {
             padding: 20px;
@@ -800,9 +814,9 @@
             html: '<div style="text-align: center; padding: 10px;"><h3 style="color: #ff6b35; margin: 0 0 10px 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 5px; color: #0066cc;"><path d="M6 2l6 7.3V21l2-1.5v-10.2L20 2H6z"/></svg>Welcome! You\'re Selected!</h3><p style="font-size: 1.1em; margin: 0 0 15px 0; line-height: 1.4;">You have <strong style="color: #ff0000; font-size: 1.2em;">3 attempts</strong> to win <strong style="color: #ff0000; font-size: 1.2em;">₦1,000,000</strong> today!</p><div style="background: linear-gradient(135deg, #ffcc00, #ff6b35); padding: 12px; border-radius: 5px; border: 1px solid #000; margin-top: 10px;"><small style="font-weight: bold; color: #000;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 5px; color: #28a745;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Match 3 items to win instantly!</small></div></div>',
             confirmButtonText: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 5px; color: #000;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>START PLAYING',
             confirmButtonColor: '#ffcc00',
-            confirmButtonBorderColor: '#000',
-            confirmButtonBorderRadius: '5px',
-            confirmButtonColorHover: '#ff6b35',
+            customClass: {
+                confirmButton: 'swal2-confirm-custom'
+            },
             allowOutsideClick: false,
             timer: 8000,
             timerProgressBar: true
@@ -1053,7 +1067,10 @@
     });
 
     var date = new Date().toLocaleDateString('en-NG', {day: 'numeric', month: 'long', year: 'numeric'});
-    document.getElementById('date').innerHTML = date;
+    const dateEl = document.getElementById('date');
+    if (dateEl) {
+        dateEl.innerHTML = date;
+    }
 
     // ⏰ 动态倒计时和名额系统
     let remainingSpots = 47;
