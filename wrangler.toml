@@ -1,12 +1,8 @@
 name = "ng-prelander-scratch"
 compatibility_date = "2024-01-01"
 
-[build]
-command = "npm run build"
-cwd = "."
-
-[env.production]
 pages_build_output_dir = "."
 
-[assets]
-directory = "."
+[[rules]]
+type = "ESModule"
+globs = ["**/*.js"]
