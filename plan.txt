@@ -16,7 +16,7 @@ Update the .alert-banner text.
 
 From: "Limited Time: Win ₦5000 Daily!"
 
-To: "🔥 Live: Win Cash & Airtime with Daily Plan!"
+To: "Live: Win Cash & Airtime with Daily Plan!"
 
 Design tweak: Change the banner background gradient to a darker red (linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)) to match the "Try your Luck" banner on the offer page.
 
@@ -53,7 +53,7 @@ New HTML content for popup:
 HTML
 
 <div style="text-align: center;">
-    <h3 style="color: #000;">🎉 MATCH FOUND! 🎉</h3>
+    <h3 style="color: #000;">✨ MATCH FOUND! ✨</h3>
     <p>You have matched the winning items!</p>
     <div style="background: #fff3cd; padding: 10px; border-radius: 8px; border: 1px dashed #ffcc00; margin: 10px 0;">
         <strong>YOUR PRIZE: ₦5000 Cash/Airtime</strong><br>
